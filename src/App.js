@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+function GreetingCard(props) {
+  return (
+    <div className="card">
+      <h2>{props.greeting}</h2>
+      <p>{props.message}</p>
+      <img src={props.image} alt="Greeting Card" />
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Simple Greeting Card</h1>
+      <GreetingCard
+        greeting="Hello!"
+        message="Wishing you a wonderful day."
+        image="https://example.com/greeting-image.jpg" // Replace with your image URL
+      />
     </div>
   );
 }
